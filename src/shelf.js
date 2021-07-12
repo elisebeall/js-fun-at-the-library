@@ -25,23 +25,21 @@ function unshelfBook(book, shelf) {
 }
 
 function listTitles(shelf) {
-  var titles = "";
+  var titles = [];
 
-  for (var i=0; i < shelf.length; i++) {
-    titles = titles + `, ${shelf[i].title.toString()}`;
+  for (var i = 0; i < shelf.length; i++) {
+    titles.push(shelf[i].title);
   }
 
-  return titles;
+  return titles.join(", ");
 }
 
 function searchShelf(shelf, book) {
-  var locatedBook;
+  var locatedBook = false;
 
   for (var i = 0; i < shelf.length; i++) {
     if (shelf[i].title.includes(book)) {
       locatedBook = true;
-    } else {
-      locatedBook = false;
     }
   }
 
