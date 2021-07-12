@@ -22,18 +22,11 @@ function buildMainCharacter(name, age, pronouns) {
 }
 
 function saveReview(newReview, reviews) {
-  if (reviews.length === 0) {
-    reviews[reviews.length] = newReview;
+  if (reviews.includes(newReview)) {
     return reviews;
   } else {
-      for (var i=0; i<reviews.length; i++) {
-        if (reviews[i] === newReview) {
-          return reviews;
-        } else {
-          reviews[reviews.length] = newReview;
-          return reviews;
-        }
-      }
+    reviews[reviews.length] = newReview;
+    return reviews;
   }
 }
 
